@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 150" width="900" height="150">
+
+  <!-- Background -->
+  <rect width="900" height="120" fill="#003C7C"/>
+  <rect y="120" width="900" height="8" fill="#E5000F"/>
+  <rect y="128" width="900" height="22" fill="#1a1a2e"/>
+
+  <!-- Decorative: three entity boxes connected by lines (left side) -->
+  <!-- Entity 1: Book -->
+  <rect x="28" y="22" width="72" height="76" rx="5"
+        fill="#CCE5FF" fill-opacity="0.08"
+        stroke="#CCE5FF" stroke-opacity="0.45" stroke-width="1.5"/>
+  <line x1="28" y1="40" x2="100" y2="40"
+        stroke="#CCE5FF" stroke-opacity="0.45" stroke-width="1"/>
+  <text x="64" y="34" font-family="Helvetica,Arial,sans-serif" font-size="9"
+        font-weight="bold" fill="#A2C9F2" fill-opacity="0.85" text-anchor="middle">Book</text>
+  <text x="64" y="56" font-family="monospace" font-size="7.5"
+        fill="#CCE5FF" fill-opacity="0.55" text-anchor="middle">* ISBN</text>
+  <text x="64" y="67" font-family="monospace" font-size="7.5"
+        fill="#CCE5FF" fill-opacity="0.40" text-anchor="middle">Title</text>
+  <text x="64" y="78" font-family="monospace" font-size="7.5"
+        fill="#CCE5FF" fill-opacity="0.40" text-anchor="middle">Year</text>
+
+  <!-- Connector Book → Author -->
+  <line x1="100" y1="60" x2="130" y2="60"
+        stroke="#CCE5FF" stroke-opacity="0.40" stroke-width="1.5"/>
+  <!-- crow's foot: many end -->
+  <line x1="126" y1="55" x2="130" y2="60" stroke="#CCE5FF" stroke-opacity="0.40" stroke-width="1.5"/>
+  <line x1="126" y1="65" x2="130" y2="60" stroke="#CCE5FF" stroke-opacity="0.40" stroke-width="1.5"/>
+  <!-- one end -->
+  <line x1="100" y1="55" x2="100" y2="65" stroke="#CCE5FF" stroke-opacity="0.40" stroke-width="1.5"/>
+
+  <!-- Entity 2: Author -->
+  <rect x="130" y="22" width="72" height="76" rx="5"
+        fill="#CCE5FF" fill-opacity="0.08"
+        stroke="#CCE5FF" stroke-opacity="0.45" stroke-width="1.5"/>
+  <line x1="130" y1="40" x2="202" y2="40"
+        stroke="#CCE5FF" stroke-opacity="0.45" stroke-width="1"/>
+  <text x="166" y="34" font-family="Helvetica,Arial,sans-serif" font-size="9"
+        font-weight="bold" fill="#A2C9F2" fill-opacity="0.85" text-anchor="middle">Author</text>
+  <text x="166" y="56" font-family="monospace" font-size="7.5"
+        fill="#CCE5FF" fill-opacity="0.55" text-anchor="middle">* AuthorID</text>
+  <text x="166" y="67" font-family="monospace" font-size="7.5"
+        fill="#CCE5FF" fill-opacity="0.40" text-anchor="middle">LastName</text>
+  <text x="166" y="78" font-family="monospace" font-size="7.5"
+        fill="#CCE5FF" fill-opacity="0.40" text-anchor="middle">FirstName</text>
+
+  <!-- Connector Book → Copy (vertical) -->
+  <line x1="64" y1="98" x2="64" y2="116"
+        stroke="#CCE5FF" stroke-opacity="0.30" stroke-width="1.5"/>
+  <line x1="59" y1="112" x2="64" y2="116" stroke="#CCE5FF" stroke-opacity="0.30" stroke-width="1.5"/>
+  <line x1="69" y1="112" x2="64" y2="116" stroke="#CCE5FF" stroke-opacity="0.30" stroke-width="1.5"/>
+
+  <!-- Entity 3: Copy (partial, cut off at bottom edge) -->
+  <rect x="28" y="116" width="72" height="22" rx="5"
+        fill="#CCE5FF" fill-opacity="0.06"
+        stroke="#CCE5FF" stroke-opacity="0.30" stroke-width="1.5"/>
+  <text x="64" y="108" font-family="Helvetica,Arial,sans-serif" font-size="9"
+        font-weight="bold" fill="#A2C9F2" fill-opacity="0.60" text-anchor="middle">Copy</text>
+
+  <!-- git tag icon (right decoration) -->
+  <circle cx="848" cy="44" r="18" fill="#CCE5FF" fill-opacity="0.08"
+          stroke="#CCE5FF" stroke-opacity="0.35" stroke-width="1.5"/>
+  <text x="848" y="40" font-family="monospace" font-size="8"
+        fill="#CCE5FF" fill-opacity="0.60" text-anchor="middle">git</text>
+  <text x="848" y="52" font-family="monospace" font-size="8"
+        fill="#CCE5FF" fill-opacity="0.60" text-anchor="middle">tag</text>
+
+  <!-- Pipeline arrow: schema.puml → CI → Release -->
+  <text x="832" y="80" font-family="monospace" font-size="8"
+        fill="#CCE5FF" fill-opacity="0.45" text-anchor="middle">.puml →</text>
+  <text x="832" y="92" font-family="monospace" font-size="8"
+        fill="#CCE5FF" fill-opacity="0.45" text-anchor="middle">CI →</text>
+  <text x="832" y="104" font-family="monospace" font-size="8"
+        fill="#CCE5FF" fill-opacity="0.45" text-anchor="middle">Release</text>
+
+  <!-- Main title -->
+  <text x="490" y="58"
+        font-family="Helvetica,Arial,sans-serif" font-size="27" font-weight="bold"
+        fill="white" text-anchor="middle">DBMS_02 – ER Schema as Code</text>
+
+  <!-- Subtitle -->
+  <text x="490" y="84"
+        font-family="Helvetica,Arial,sans-serif" font-size="13"
+        fill="#A2C9F2" text-anchor="middle">
+    PlantUML  ·  GitHub Actions  ·  Releases  ·  Git Tags
+  </text>
+
+  <!-- Footer -->
+  <text x="490" y="142"
+        font-family="Helvetica,Arial,sans-serif" font-size="11"
+        fill="#6CA1D9" text-anchor="middle">
+    Databases · THGA Bochum · Stephan Bökelmann
+  </text>
+
+</svg>

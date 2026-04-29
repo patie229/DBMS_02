@@ -219,12 +219,18 @@ ellipses). PlantUML uses Crow's Foot notation. Describe one concrete difference
 in how an N:M relationship is represented in each notation.
 
 > *Your answer:*
+>
+> In Chen notation, an N:M relationship is shown using a diamond between the two entities, and the cardinalities (N and M) are written on the connecting lines.
+In Crow’s Foot notation, there is no diamond. The relationship is shown as a direct line between the entities, and the N:M cardinalities are shown with crow’s foot symbols at each end
 
 **Question 2.2:** What would happen if you wrote `@startuml Library` instead of
 `@startuml` at the top of `schema.puml`? Try it locally (`plantuml -tsvg schema.puml`)
 and observe the output filename. Why would this break the workflow?
 
 > *Your answer:*
+>
+If you write @startuml Library instead of @startuml, PlantUML will use “Library” as the diagram name and will generate the output file as Library.svg.
+The workflow expects the file to be named schema.svg, so changing the diagram name breaks the automatic steps that rely on this filename.
 
 **Question 2.3:** The `Author`–`Book` relationship is N:M. Does your PlantUML
 diagram require you to model the intermediate join table explicitly, or does
@@ -232,6 +238,9 @@ PlantUML abstract it away? At which stage of the design process would the join
 table appear?
 
 > *Your answer:*
+>
+> PlantUML hides the join table.
+The join table appears later, when converting the ER diagram into real database tables.
 
 ---
 
@@ -299,6 +308,8 @@ Open `schema.svg` in a browser or SVG viewer.
 > showing all five entities and all four relationships, and insert it here.
 >
 > `[insert screenshot]`
+> <img width="810" height="715" alt="bild2_richti_richtig" src="https://github.com/user-attachments/assets/271108d9-c02e-4926-81e8-b96065079c48" />
+
 
 Once the diagram looks correct, tell Git to ignore the generated artifact.
 The workflow will recreate it on every release:
@@ -327,12 +338,21 @@ Name one shell command you could use to check the exit code of the last command
 and verify that the render succeeded, without opening the SVG file.
 
 > *Your answer:*
+>
+You can check the exit code with:"echo $?"
+A value of 0 means PlantUML succeeded.
 
 **Question 3.2:** Delete `schema.svg` and run `plantuml -tsvg schema.puml` again.
 Then run `git status`. Is `schema.svg` shown as an untracked file? Explain why
 or why not.
 
 > *Your answer:*
+>
+git status does not show schema.svg as an untracked file.
+Your terminal output confirms this: the working tree is clean.
+Because schema.svg is listed in .gitignore.
+Git completely ignores files that match patterns in .gitignore, even if they are newly created.
+So when PlantUML recreates schema.svg, Git does not show it as untracked.
 
 ---
 
@@ -401,6 +421,8 @@ git tag
 > commits in order, and insert it here.
 >
 > `[insert screenshot]`
+> <img width="862" height="190" alt="bild3" src="https://github.com/user-attachments/assets/4e741f08-d55d-41ab-b2c5-8671fec34701" />
+
 
 > **Caveat:** Tags are not pushed automatically with `git push origin main`.
 > You must push them explicitly. Forgetting this step means the workflow never
@@ -412,11 +434,15 @@ git tag
 your fork on GitHub. Did any workflow run trigger? Explain why or why not.
 
 > *Your answer:*
+>
+No workflow was triggered because the push command failed. The branch main does not exist locally (the current branch is master), so no changes were pushed to GitHub. Since GitHub did not receive any new commits or tags, no GitHub Actions workflow was triggered
 
 **Question 4.2:** Run `git tag -v v1.0.0`. What information is shown that
 `git tag` alone does not display? What does the `-v` flag verify?
 
 > *Your answer:*
+>
+The git tag -v v1.0.0 command displays detailed information about the tag, including the commit it points to, the tagger’s name, email, date, and the tag message. In contrast, git tag only lists tag names. The -v flag is used to verify the GPG signature of the tag. In this case, the message "no signature found" indicates that the tag is not signed, so its authenticity cannot be verified.
 
 ---
 
@@ -560,6 +586,8 @@ if you replaced it with `on: push: branches: ['main']`? Would the release
 workflow still make sense? Why or why not?
 
 > *Your answer:*
+>
+If the trigger is changed to branches: ['main'], the workflow will run on every push to the main branch instead of only on version tags. This does not make sense for a release workflow, because releases should only be created for specific versions (tags), not for every commit
 
 **Question 5.2:** The step `apt-get install plantuml` takes roughly 20–30 seconds
 on every run. In a larger team with many releases per day, this adds up. Name
@@ -567,6 +595,8 @@ one GitHub Actions mechanism that could eliminate this installation time on
 repeated runs.
 
 > *Your answer:*
+>
+
 
 ---
 

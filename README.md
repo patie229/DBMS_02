@@ -66,6 +66,8 @@ git --version
 > successful version checks and insert it here.
 >
 > `[insert screenshot]`
+> <img width="771" height="470" alt="bild1_richtig" src="https://github.com/user-attachments/assets/7ca81d13-132c-4a92-a3e0-0ea1d0644a72" />
+
 
 ---
 

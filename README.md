@@ -587,7 +587,7 @@ workflow still make sense? Why or why not?
 
 > *Your answer:*
 >
-If the trigger is changed to branches: ['main'], the workflow will run on every push to the main branch instead of only on version tags. This does not make sense for a release workflow, because releases should only be created for specific versions (tags), not for every commit
+If the trigger is changed to branches: ['main'], the workflow will run on every push to the main branch instead of only on version tags. This does not make sense for a release workflow, because releases should only be created for specific versions (tags), not for every commit.
 
 **Question 5.2:** The step `apt-get install plantuml` takes roughly 20–30 seconds
 on every run. In a larger team with many releases per day, this adds up. Name
@@ -596,6 +596,7 @@ repeated runs.
 
 > *Your answer:*
 >
+One mechanism is caching (using actions/cache). It allows GitHub Actions to reuse previously installed dependencies, so PlantUML does not need to be installed again on every run.
 
 
 ---

@@ -229,7 +229,7 @@ and observe the output filename. Why would this break the workflow?
 
 > *Your answer:*
 >
-If you write @startuml Library instead of @startuml, PlantUML will use “Library” as the diagram name and will generate the output file as Library.svg.
+>If you write @startuml Library instead of @startuml, PlantUML will use “Library” as the diagram name and will generate the output file as Library.svg.
 The workflow expects the file to be named schema.svg, so changing the diagram name breaks the automatic steps that rely on this filename.
 
 **Question 2.3:** The `Author`–`Book` relationship is N:M. Does your PlantUML
@@ -339,7 +339,7 @@ and verify that the render succeeded, without opening the SVG file.
 
 > *Your answer:*
 >
-You can check the exit code with:"echo $?"
+>You can check the exit code with:"echo $?"
 A value of 0 means PlantUML succeeded.
 
 **Question 3.2:** Delete `schema.svg` and run `plantuml -tsvg schema.puml` again.
@@ -348,7 +348,7 @@ or why not.
 
 > *Your answer:*
 >
-git status does not show schema.svg as an untracked file.
+>git status does not show schema.svg as an untracked file.
 Your terminal output confirms this: the working tree is clean.
 Because schema.svg is listed in .gitignore.
 Git completely ignores files that match patterns in .gitignore, even if they are newly created.
@@ -435,14 +435,14 @@ your fork on GitHub. Did any workflow run trigger? Explain why or why not.
 
 > *Your answer:*
 >
-No workflow was triggered because the push command failed. The branch main does not exist locally (the current branch is master), so no changes were pushed to GitHub. Since GitHub did not receive any new commits or tags, no GitHub Actions workflow was triggered
+>No workflow was triggered because the push command failed. The branch main does not exist locally (the current branch is master), so no changes were pushed to GitHub. Since GitHub did not receive any new commits or tags, no GitHub Actions workflow was triggered
 
 **Question 4.2:** Run `git tag -v v1.0.0`. What information is shown that
 `git tag` alone does not display? What does the `-v` flag verify?
 
 > *Your answer:*
 >
-The git tag -v v1.0.0 command displays detailed information about the tag, including the commit it points to, the tagger’s name, email, date, and the tag message. In contrast, git tag only lists tag names. The -v flag is used to verify the GPG signature of the tag. In this case, the message "no signature found" indicates that the tag is not signed, so its authenticity cannot be verified.
+>The git tag -v v1.0.0 command displays detailed information about the tag, including the commit it points to, the tagger’s name, email, date, and the tag message. In contrast, git tag only lists tag names. The -v flag is used to verify the GPG signature of the tag. In this case, the message "no signature found" indicates that the tag is not signed, so its authenticity cannot be verified.
 
 ---
 
@@ -587,7 +587,7 @@ workflow still make sense? Why or why not?
 
 > *Your answer:*
 >
-If the trigger is changed to branches: ['main'], the workflow will run on every push to the main branch instead of only on version tags. This does not make sense for a release workflow, because releases should only be created for specific versions (tags), not for every commit.
+>If the trigger is changed to branches: ['main'], the workflow will run on every push to the main branch instead of only on version tags. This does not make sense for a release workflow, because releases should only be created for specific versions (tags), not for every commit.
 
 **Question 5.2:** The step `apt-get install plantuml` takes roughly 20–30 seconds
 on every run. In a larger team with many releases per day, this adds up. Name
@@ -596,7 +596,7 @@ repeated runs.
 
 > *Your answer:*
 >
-One mechanism is caching (using actions/cache). It allows GitHub Actions to reuse previously installed dependencies, so PlantUML does not need to be installed again on every run.
+>One mechanism is caching (using actions/cache). It allows GitHub Actions to reuse previously installed dependencies, so PlantUML does not need to be installed again on every run.
 
 
 ---
@@ -653,7 +653,7 @@ about where optimisation effort should be directed?
 
 > *Your answer:*
 >
-The installation step is much slower (about 5–10× longer), so optimisation should focus on avoiding repeated installations (e.g., using caching).
+>The installation step is much slower (about 5–10× longer), so optimisation should focus on avoiding repeated installations (e.g., using caching).
 
 **Question 6.2:** Download `schema.svg` from the Release page and compare it
 to the `schema.svg` you rendered locally with `plantuml -tsvg schema.puml`.
@@ -662,7 +662,7 @@ build process?
 
 > *Your answer:*
 >
-Yes, they are identical. This shows the build is reproducible and produces consistent results across environments.
+>Yes, they are identical. This shows the build is reproducible and produces consistent results across environments.
 
 ---
 

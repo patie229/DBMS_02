@@ -639,6 +639,10 @@ Once the workflow has completed, navigate to **Releases** in the right sidebar.
 > insert it here.
 >
 > `[insert screenshot]`
+>
+<img width="1102" height="789" alt="release" src="https://github.com/user-attachments/assets/42943d75-f383-49d9-be89-e2a0004c1f2f" />
+https://github.com/patie229/DBMS_02/blob/master/schema.svg
+
 
 ### Questions for Task 6
 

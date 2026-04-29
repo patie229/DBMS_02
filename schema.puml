@@ -1,4 +1,5 @@
-@startuml
+@startuml Library
+
 ' ============================================================
 '  schema.puml -- ER Diagram: Bochum City Library
 '  DBMS_02 · THGA Bochum

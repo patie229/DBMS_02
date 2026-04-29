@@ -652,6 +652,8 @@ Which takes longer, and by approximately what factor? What does this suggest
 about where optimisation effort should be directed?
 
 > *Your answer:*
+>
+The installation step is much slower (about 5–10× longer), so optimisation should focus on avoiding repeated installations (e.g., using caching).
 
 **Question 6.2:** Download `schema.svg` from the Release page and compare it
 to the `schema.svg` you rendered locally with `plantuml -tsvg schema.puml`.
@@ -659,6 +661,8 @@ Are they identical? What does this tell you about the reproducibility of the
 build process?
 
 > *Your answer:*
+>
+Yes, they are identical. This shows the build is reproducible and produces consistent results across environments.
 
 ---
 
@@ -673,6 +677,8 @@ your schema. What would be different if you had stored the diagram as a
 lose?
 
 > *Your answer:*
+>
+> With .puml, changes are text-based and easy to track. With .drawio or PNG, changes are hard to read (XML or binary), so we lose clear version history and diff information.
 
 **Question B – Collaboration:**
 Imagine two people editing `schema.puml` simultaneously on separate branches –
@@ -681,6 +687,8 @@ Git can show a textual diff of the conflict. Would this be possible with a
 binary diagram file? What practical consequence does this have for a team?
 
 > *Your answer:*
+>
+> No, this would not be possible with a binary diagram file. Git cannot show meaningful differences or conflicts in binary files like PNG. As a result, team members would not be able to clearly see what each person changed, making merges more difficult and error-prone. With a text-based file like .puml, conflicts can be understood and resolved easily
 
 **Question C – Tag vs. branch for releases:**
 You tagged a specific commit as `v1.0.0` rather than pushing to a branch called
@@ -688,6 +696,8 @@ You tagged a specific commit as `v1.0.0` rather than pushing to a branch called
 Under what circumstance would someone want to use a branch instead?
 
 > *Your answer:*
+>
+> A tag is fixed and immutable, ensuring a stable release point, while a branch can change. A branch is useful when you need to continue development or apply fixes to a release.
 
 **Question D – The value of CI for documentation:**
 Before this exercise, updating a diagram meant: edit the source, export an
@@ -696,6 +706,8 @@ sentences what the CI pipeline eliminates, and what new guarantee it provides
 instead.
 
 > *Your answer:*
+>
+> The CI pipeline eliminates the need to manually export and commit the diagram image, reducing the risk of inconsistencies between the source and the generated file. It guarantees that the diagram is always automatically generated from the latest source, ensuring accuracy and consistency.
 
 > **Screenshot 6:** Take a screenshot of your terminal showing
 > `git log --oneline` with all commits from this exercise visible, then open
@@ -703,6 +715,11 @@ instead.
 > Capture both in one screenshot and insert it here.
 >
 > `[insert screenshot]`
+>
+> <img width="1917" height="1037" alt="svg" src="https://github.com/user-attachments/assets/7d147b2e-f768-4c2d-affa-80503845dc63" />
+
+> <img width="1917" height="1037" alt="svg" src="https://github.com/user-attachments/assets/316eabbe-fa46-4f19-9088-91424744d4eb" />
+
 
 ---
 
@@ -751,6 +768,8 @@ instead.
    > corresponding GitHub Release page, and insert it here.
    >
    > `[insert screenshot]`
+   > <img width="1177" height="733" alt="Unbenannt" src="https://github.com/user-attachments/assets/a11742fe-d977-4735-b9f3-96d41be9eb76" />
+
 
 ---
 
